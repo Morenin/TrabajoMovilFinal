@@ -11,6 +11,7 @@ import { Timestamp } from 'rxjs/internal/operators/timestamp';
   templateUrl: './todo-details.page.html',
   styleUrls: ['./todo-details.page.scss'],
 })
+
 export class TodoDetailsPage implements OnInit {
   todo: TaskI = {
     actividad: '',
