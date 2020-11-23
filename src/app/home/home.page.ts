@@ -7,6 +7,7 @@ import { TodoService } from '../services/todo.service';
   templateUrl: 'home.page.html',
   styleUrls: ['home.page.scss'],
 })
+
 export class HomePage {
   todos: TaskI[];
   constructor(private todoService: TodoService) {}

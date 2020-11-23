@@ -1,7 +1,7 @@
 <ion-header>
   <ion-toolbar color="primary">
     <ion-buttons slot="start">
-      <ion-back-button text="Volver" defaultHref="/home"></ion-back-button>
+      <ion-back-button text="Volver" defaultHref="/gestion"></ion-back-button>
     </ion-buttons>
     <ion-title> Nueva Ficha </ion-title>
   </ion-toolbar>
@@ -15,14 +15,12 @@
         placeholder="Dia"
         [(ngModel)]="todo.dia"></ion-input>
     </ion-item>
+    <br>
     <ion-item *ngIf="todo">
-        <ion-input
-          required
-          type="text"
-          placeholder="Actividad"
-          [(ngModel)]="todo.actividad"></ion-input>
+        <ion-textarea class="estilotextarea" rows=8 placeholder="Actividad"
+          [(ngModel)]="todo.actividad"></ion-textarea>
     </ion-item>
   </ion-list>
   <br><br>
-  <ion-button expand="full" (click)="saveTodo()">Save</ion-button> 
+  <ion-button expand="full" (click)="saveTodo()">Guardar</ion-button> 
 </ion-content>
