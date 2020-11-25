@@ -3,14 +3,14 @@ import { TaskI } from '../../models/task.interface';
 import { TodoService } from '../../services/todo.service';
 import { ActivatedRoute } from '@angular/router';
 import { NavController, LoadingController } from '@ionic/angular';
-import { timestamp } from 'rxjs/operators';
-import { Timestamp } from 'rxjs/internal/operators/timestamp';
+
 
 @Component({
   selector: 'app-todo-details',
   templateUrl: './todo-details.page.html',
   styleUrls: ['./todo-details.page.scss'],
 })
+
 export class TodoDetailsPage implements OnInit {
   todo: TaskI = {
     actividad: '',
