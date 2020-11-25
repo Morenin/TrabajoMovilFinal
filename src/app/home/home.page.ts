@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { isWithinInterval } from 'date-fns/esm';
+import { isWithinInterval } from 'date-fns';
 import { TaskI } from '../models/task.interface';
 import { TodoService } from '../services/todo.service';
-
 
 @Component({
   selector: 'app-home',
@@ -25,6 +24,10 @@ export class HomePage {
   }
 
   loadResults(){
+    if (!this.startDate || !this.endDate){
+      console.log('falta datos');
+      return;
+    }
     if (this.startDate >= this.endDate){
       this.endDate = this.startDate;
     }
@@ -32,7 +35,7 @@ export class HomePage {
     const endDate = new Date(this.endDate);
 
     this.filtered = this.todos.filter( item => {
-      return isWithinInterval(new Date(item.dia), {start: startDate, end: endDate} )
-    })
+      return isWithinInterval(new Date(item.dia), {start: startDate, end: endDate} );
+    });
   }
 }

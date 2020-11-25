@@ -10,11 +10,11 @@
   <ion-list>
     <ion-item>
       <ion-label>Desde: </ion-label>
-      <ion-datetime displayFormat="DD/MM/YYYY" (ionChange)="loadResults()" [(ngModel)]="startDate"></ion-datetime>
+      <ion-datetime displayFormat="YYYY-MM-DD" (ionChange)="loadResults()" [(ngModel)]="startDate"></ion-datetime>
     </ion-item>
     <ion-item>
       <ion-label>Hasta: </ion-label>
-      <ion-datetime displayFormat="DD/MM/YYYY" (ionChange)="loadResults()" [(ngModel)]="endDate"></ion-datetime>
+      <ion-datetime displayFormat="YYYY-MM-DD" (ionChange)="loadResults()" [(ngModel)]="endDate"></ion-datetime>
     </ion-item>
     <br><br><br><br>
     <ion-item >
@@ -24,12 +24,12 @@
           Actividad</ion-label>
       </ion-item>
 
-    <ion-item-sliding *ngFor="let todo of todos">
-      <ion-item *ngIf="todo">
+    <ion-item-sliding *ngFor="let filter of filtered">
+      <ion-item *ngIf="filter">
         <ion-label>
-          {{todo.dia}}</ion-label>
+          {{filter.dia}}</ion-label>
         <ion-label>
-          {{todo.actividad}}</ion-label>
+          {{filter.actividad}}</ion-label>
       </ion-item>
       <ion-item-options side="end">
         <ion-item-option color="secondary" (click)="onRemove(item)">
